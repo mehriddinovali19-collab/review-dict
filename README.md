@@ -1,179 +1,301 @@
-# Python Mashqlari — 60 ta amaliy masala
+## 🟩 1. **Dictionary — Yaratish (Dictionary Creation)**
 
-Quyida siz bergan mavzular bo'yicha jami **60 ta masala** tayyorlandi. Har bir masaladan keyin tushunish uchun qisqacha **misol** (kirish/chiqish) berildi — lekin yechimni o'zingiz yozasiz.
+### 🎯 Task 1:
 
----
+Bo‘sh `student` dict yarat va unga `name`, `age`, `grade` kalitlarini qiymatlari bilan qo‘sh.
 
-## 1. Numbers
-1. Ikki sonni kiritib, ularning yig'indisi, ayirmasi, ko'paytmasi va bo'linmasini hisoblang.
-   *Misol:* kiritildi `8` va `3` → yig'indi `11`, ayirma `5`, ko'paytma `24`, bo'linma `2.67`
-2. Berilgan sonning tub son (prime) ekanligini tekshiruvchi dastur yozing.
-   *Misol:* kiritildi `17` → `"17 — tub son"`; kiritildi `15` → `"15 — tub son emas"`
+### 🎯 Task 2:
 
-## 2. List
-3. Berilgan ro'yxatdagi eng katta va eng kichik elementni toping (`max()`/`min()` funksiyasidan foydalanmasdan).
-   *Misol:* `[4, 9, 2, 7, 1]` → eng katta `9`, eng kichik `1`
-4. Ro'yxatdagi takrorlanuvchi elementlarni olib tashlang.
-   *Misol:* `[1, 2, 2, 3, 4, 4, 5]` → `[1, 2, 3, 4, 5]`
-5. Ro'yxatni teskari tartibda chiqaring (`reverse()` yoki slicing'dan foydalanmasdan, faqat `for` loop bilan).
-   *Misol:* `[10, 20, 30]` → `30, 20, 10`
+Quyidagi ma’lumotdan foydalangan holda `book` nomli dict tuz:
 
-## 3. Nested List
-6. 3x3 matritsani nested list ko'rinishida yarating va uning diagonal elementlari yig'indisini toping.
-   *Misol:* `[[1,2,3],[4,5,6],[7,8,9]]` → diagonal yig'indi = `1+5+9 = 15`
-7. Ikki nested listni (matritsalarni) element bo'yicha qo'shing.
-   *Misol:* `[[1,2],[3,4]]` + `[[5,6],[7,8]]` → `[[6,8],[10,12]]`
+```python
+title: "Python Basics"
+author: "Diyorbek Jumanov"
+pages: 250
+```
 
-## 4. List Slicing
-8. Berilgan ro'yxatdan faqat juft index'dagi elementlarni slicing yordamida ajratib oling.
-   *Misol:* `[10,20,30,40,50,60]` → `[10,30,50]`
-9. Ro'yxatni teng ikkiga bo'lib, ikkinchi yarmini birinchisidan oldin chiqaring (slicing yordamida).
-   *Misol:* `[1,2,3,4,5,6]` → `[4,5,6,1,2,3]`
+### 🎯 Task 3:
 
-## 5. List Comprehension
-10. 1 dan 50 gachagi sonlardan faqat 3 ga bo'linadiganlarini list comprehension yordamida yig'ing.
-    *Misol:* natija boshlanishi `[3, 6, 9, 12, ..., 48]`
-11. Berilgan so'zlar ro'yxatidan faqat unli harf bilan boshlanadiganlarini ajratib oling.
-*Misol:* `["olma","banan","anor","uzum"]` → `["olma","anor"]`
-12. Ikki o'lchamli (nested) list comprehension yordamida 5x5 ko'paytirish jadvalini hosil qiling.
-    *Misol:* 1-qator `[1,2,3,4,5]`, 2-qator `[2,4,6,8,10]`, ...
+Ikki dict yarat: `user1`, `user2`. Har birida `name`, `email` bo‘lsin. So‘ng ular ro‘yxatga joylashtirilsin:
 
-## 6. Tuple
-13. Tuple ichidagi elementlarning chastotasini (necha marta takrorlangani) hisoblang.
-    *Misol:* `(1,2,2,3,3,3)` → `{1:1, 2:2, 3:3}`
-14. Ikkita tuple'ni birlashtirib, natijani saralangan (sorted) tuple sifatida qaytaring.
-    *Misol:* `(3,1,2)` + `(6,4,5)` → `(1,2,3,4,5,6)`
-
-## 7. Set
-15. Ikki ro'yxatdagi umumiy (kesishgan) elementlarni set yordamida toping.
-    *Misol:* `[1,2,3,4]` va `[3,4,5,6]` → `{3,4}`
-16. Berilgan matndagi unique (takrorlanmaydigan) so'zlar sonini set yordamida hisoblang.
-    *Misol:* `"olma anor olma uzum"` → unique so'zlar soni: `3`
-
-## 8. Dictionary
-17. Talabalar ismi va bahosi saqlangan dictionary yarating, eng yuqori bahoga ega talabani toping.
-    *Misol:* `{"Ali":90, "Vali":85, "Soli":95}` → eng yuqori: `"Soli"`
-18. Berilgan matndagi har bir harfning necha marta takrorlanganini dictionary'da saqlang.
-    *Misol:* `"salom"` → `{'s':1,'a':1,'l':1,'o':1,'m':1}`
-19. Ikki dictionary'ni birlashtiring, agar kalit takrorlansa qiymatlarini qo'shib chiqaring.
-    *Misol:* `{"olma":5}` + `{"olma":3,"anor":2}` → `{"olma":8,"anor":2}`
-
-## 9. Nested Dictionary
-20. Har bir talabaning fanlar bo'yicha bahosini saqlaydigan nested dictionary yarating va o'rtacha bahoni hisoblang.
-    *Misol:* `{"Ali": {"mat":90,"fizika":80}}` → o'rtacha: `85`
-21. Nested dictionary ichida ma'lum bir kalitni qidirib, uning qiymatini yangilang.
-    *Misol:* `{"Ali": {"mat":90}}` → `"mat"` qiymatini `95`ga o'zgartirish
-
-## 10. Dict Comprehension
-22. Berilgan ro'yxatdagi sonlarning kvadratini kalit-qiymat juftligida saqlovchi dict comprehension yozing.
-    *Misol:* `[1,2,3,4]` → `{1:1, 2:4, 3:9, 4:16}`
-23. Berilgan dictionary'dan faqat qiymati 50 dan katta bo'lgan juftliklarni ajratib oling.
-    *Misol:* `{"a":40,"b":60,"c":80}` → `{"b":60,"c":80}`
-
-## 11. String
-24. Berilgan satrning palindrom (orqa-oldin bir xil o'qiladigan) ekanligini tekshiring.
-    *Misol:* `"radar"` → palindrom; `"salom"` → palindrom emas
-25. Matndagi har bir so'zning birinchi harfini katta qilib chiqaring (title case'ni qo'lda yozing).
-    *Misol:* `"salom dunyo"` → `"Salom Dunyo"`
-26. Berilgan satrdagi unlilar sonini hisoblang.
-    *Misol:* `"Python dasturlash"` → unlilar soni: `5`
-
-## 12. String Slicing
-27. Berilgan satrni teskari tartibda chiqaring (slicing yordamida, `[::-1]`).
-    *Misol:* `"Python"` → `"nohtyP"`
-28. Satrning faqat har 2-harfini slicing yordamida ajratib oling.
-    *Misol:* `"abcdefgh"` → `"aceg"`
-
-## 13. If...Elif...Else
-29. Foydalanuvchi kiritgan yoshga qarab "bola", "o'smir", "kattalar" yoki "keksa" toifasini aniqlang.
-    *Misol:* yosh `15` → `"o'smir"`
-30. Uchta sonni solishtirib, eng kattasini if-elif-else yordamida toping.
-    *Misol:* `4, 9, 7` → eng katta: `9`
-
-## 14. While Loop
-31. `while` loop yordamida 1 dan 100 gachagi sonlar yig'indisini hisoblang.
-    *Misol:* natija: `5050`
-32. Foydalanuvchidan son kiritishni "stop" so'zi kiritilguncha davom ettiring va kiritilgan sonlar o'rtachasini chiqaring.
-    *Misol:* kiritildi `10, 20, 30, stop` → o'rtacha: `20`
-
-## 15. For Loop
-33. 1 dan 10 gacha sonlarning faktorialini chiqaring.
-    *Misol:* `5! = 120`
-34. Fibonachchi ketma-ketligining birinchi 15 ta sonini chiqaring.
-    *Misol:* `0,1,1,2,3,5,8,13,21,34,55,89,144,233,377`
-35. Berilgan ro'yxatdagi har bir elementni o'z indexi bilan birga chiqaring (`enumerate` yordamida).
-    *Misol:* `["olma","anor","uzum"]` → `0 olma`, `1 anor`, `2 uzum`
-
-## 16. Break Statement
-36. 1 dan 100 gacha sonlarni tekshirib, birinchi 7 ga bo'linadigan sonni topib `break` bilan to'xtatib chiqaring.
-    *Misol:* natija: `7`
-37. Ro'yxat ichida berilgan elementni qidiring, topilgach loop'ni `break` bilan to'xtating.
-    *Misol:* `[3,7,9,12]` da `9` ni qidirish → `"9 topildi, index=2"`
-
-## 17. Continue Statement
-38. 1 dan 20 gacha sonlardan faqat toqlarini `continue` yordamida o'tkazib yuborib, juftlarini chiqaring.
-    *Misol:* `2,4,6,8,...,20`
-39. Ro'yxatdagi manfiy sonlarni `continue` bilan o'tkazib, faqat musbat sonlarning yig'indisini hisoblang.
-    *Misol:* `[5,-3,8,-1,2]` → musbat yig'indi: `15`
-
-## 18. Functions
-40. Berilgan sonning faktorialini hisoblovchi funksiya yozing.
-    *Misol:* `factorial(6)` → `720`
-41. Ikki son orasidagi barcha tub sonlarni qaytaruvchi funksiya yozing.
-    *Misol:* `10` dan `30` gacha → `[11,13,17,19,23,29]`
-42. Default va keyword argumentlardan foydalanib, talaba ma'lumotlarini chiqaruvchi funksiya yarating.
-    *Misol:* `student_info("Ali", age=20, course="Python")` → `"Ali, 20 yosh, Python kursi"`
-
-## 19. Lambda Function
-43. Lambda funksiya yordamida ikkita sonning ko'paytmasini hisoblang.
-    *Misol:* `multiply = lambda x,y: x*y` → `multiply(4,5)` → `20`
-44. Ro'yxatdagi sonlarni lambda funksiya yordamida kamayish tartibida saralang (`sorted()` + `key`).
-    *Misol:* `[5,2,8,1]` → `[8,5,2,1]`
-
-## 20. Variables Scope
-45. Global va local o'zgaruvchilar orasidagi farqni ko'rsatuvchi dastur yozing (`global` kalit so'zidan foydalaning).
-    *Misol:* global `x=10`, funksiya ichida `x`ni `20`ga o'zgartirish va natijani chiqarish
-46. Funksiya ichida `nonlocal` kalit so'zidan foydalanib, ichki funksiyada tashqi funksiya o'zgaruvchisini o'zgartiring.
-    *Misol:* tashqi funksiyada `count=0`, ichki funksiya orqali `count`ni `1`ga oshirish
-
-## 21. Classes and Objects
-47. `Car` klassini yarating: marka, model, narx atributlari va ma'lumotni chiqaruvchi metod bilan.
-    *Misol:* `Car("Chevrolet","Cobalt",12000)` → `"Chevrolet Cobalt - $12000"`
-48. `BankAccount` klassi yarating: pul qo'yish (`deposit`), yechish (`withdraw`) va balansni ko'rsatish metodlari bilan.
-    *Misol:* `deposit(500)`, `withdraw(200)` → balans: `300`
-49. `Book` klassidan bir necha obyekt yaratib, ularni ro'yxatda saqlang va narxi bo'yicha saralang.
-    *Misol:* `[Book("A",20), Book("B",10)]` → narx bo'yicha: `B, A`
-
-## 22. Inheritance
-50. `Animal` klassidan `Dog` va `Cat` klasslarini meros qilib oling, har biri uchun `sound()` metodini qayta yozing (override).
-    *Misol:* `Dog().sound()` → `"Vov-vov"`, `Cat().sound()` → `"Miyov"`
-51. `Person` klassidan `Student` klassini meros qilib oling, qo'shimcha "fakultet" atributi bilan.
-    *Misol:* `Student("Ali", 20, "IT fakulteti")`
-52. `Shape` klassidan `Circle` va `Rectangle` klasslarini hosil qiling, har biri o'z yuzasini hisoblaydigan metodga ega bo'lsin.
-    *Misol:* `Circle(5).area()` → `78.5`, `Rectangle(4,6).area()` → `24`
-
-## 23. Read/Write Txt Files
-53. Foydalanuvchidan kiritilgan matnni `notes.txt` fayliga yozib saqlang.
-    *Misol:* kiritildi `"Bugun Python o'rgandim"` → fayl yaratiladi va matn saqlanadi
-54. `notes.txt` faylini o'qib, undagi qatorlar sonini va so'zlar sonini hisoblang.
-    *Misol:* fayl 3 qatordan, 10 so'zdan iborat → `"3 qator, 10 so'z"`
-
-## 24. Read/Write CSV Files
-55. Talabalar ismi va bahosini o'z ichiga olgan ma'lumotlarni `students.csv` fayliga yozing.
-    *Misol:* faylga `Ali,90` va `Vali,85` qatorlari yoziladi
-56. `students.csv` faylini o'qib, eng yuqori bahoga ega talabani aniqlang.
-    *Misol:* fayldan `"Ali,90"` eng yuqori ekanligi topiladi
-57. CSV fayldagi ma'lumotlarni dictionary ko'rinishida (`DictReader`) o'qib, ekranga chiqaring.
-    *Misol:* `{'ism': 'Ali', 'baho': '90'}`
-
-## 25. Exception Handling
-58. Foydalanuvchidan son kiritishni so'rang va agar son emas narsa kiritilsa, `try-except` yordamida xatolikni ushlang.
-    *Misol:* kiritildi `"abc"` → `"Xato: bu son emas!"`
-59. Nolga bo'lish (`ZeroDivisionError`) xatoligini `try-except-finally` bilan boshqaring.
-    *Misol:* `10/0` → `"Xatolik: nolga bo'lib bo'lmaydi"`, so'ng `"Dastur tugadi"`
-60. Maxsus (custom) exception klass yaratib, berilgan yosh manfiy bo'lsa shu xatolikni chaqiring (`raise`).
-    *Misol:* `yosh=-5` → `raise NegativeAgeError("Yosh manfiy bo'lishi mumkin emas")`
+```python
+users = [user1, user2]
+```
 
 ---
 
-**Maslahat:** Har bir masalani yechishdan oldin, avval qog'ozda yoki izoh sifatida algoritmni qisqacha yozib oling, keyin kodga o'tkazing. Agar biror masalada qiynalsangiz, ayting — birga ko'rib chiqamiz.
+## 🟩 2. **Dictionary Access Item**
+
+### 🎯 Task 4:
+
+Quyidagi dictdan `brand` va `color` ni alohida chop et:
+
+```python
+car = {"brand": "Chevrolet", "model": "Cobalt", "color": "white"}
+```
+
+### 🎯 Task 5:
+
+`.get()` metodi orqali `year` degan kalitni o‘qishga harakat qil. U mavjud emas. Default qiymat ber.
+
+### 🎯 Task 6:
+
+Foydalanuvchidan `kalit` nomini input orqali so‘ra. Agar dictda shu kalit bo‘lsa, qiymatini chiqarsin, aks holda `"Topilmadi"` chiqarsin.
+
+---
+
+## 🟩 3. **Dictionary Change Item**
+
+### 🎯 Task 7:
+
+Quyidagi dictda `age` qiymatini `26` ga o‘zgartir:
+
+```python
+person = {"name": "Ali", "age": 25, "city": "Tashkent"}
+```
+
+### 🎯 Task 8:
+
+`user` dict bor. Email noto‘g‘ri yozilgan. Uni `correct@email.com` ga almashtir.
+
+### 🎯 Task 9:
+
+Ro‘yxatdagi har bir `user` ning `active` qiymatini `False` qilib chiq:
+
+```python
+users = [
+  {"id": 1, "active": True},
+  {"id": 2, "active": True},
+]
+```
+
+---
+
+## 🟩 4. **Dictionary Add Item**
+
+### 🎯 Task 10:
+
+Quyidagi dictga `email` kalitini qo‘sh: `"email": "ali@example.com"`
+
+```python
+person = {"name": "Ali", "age": 25}
+```
+
+### 🎯 Task 11:
+
+Bo‘sh `config` dict yarat. Foydalanuvchidan 3 ta `setting` nomi va qiymati so‘raladi. Ularni dictga joyla.
+
+### 🎯 Task 12:
+
+`inventory` dict bor. Agar mahsulot yo‘q bo‘lsa, uni `quantity = 0` bilan qo‘sh.
+
+---
+
+## 🟩 5. **Dictionary Remove Item**
+
+### 🎯 Task 13:
+
+Quyidagi dictdan `city` kalitini o‘chir:
+
+```python
+person = {"name": "Ali", "age": 25, "city": "Tashkent"}
+```
+
+### 🎯 Task 14:
+
+`.pop()` metodi yordamida `age` ni olib tashla va qiymatini ekranga chiqar.
+
+### 🎯 Task 15:
+
+`clear()` metodidan foydalanib, `settings` dictni tozalang.
+
+### 🎯 Task 16 (Muhim):
+
+Foydalanuvchidan kalit nomi so‘raladi. Agar dictda mavjud bo‘lsa, o‘chiriladi. Aks holda `"Bunday kalit yo‘q"` chiqariladi.
+
+---
+
+## 🟩 6. **Dictionary Loop**
+
+### 🎯 Task 17:
+
+Quyidagi dictni `for` loop orqali chiqar: `kalit → qiymat` ko‘rinishida.
+
+```python
+student = {"name": "Ali", "age": 25, "grade": "A"}
+```
+
+### 🎯 Task 18:
+
+`items()` yordamida barcha juftliklarni chiqar. Har bir kalitni katta harflarda chiqarsin:
+
+```python
+name → Ali  → NAME → Ali
+```
+
+### 🎯 Task 19:
+
+Quyidagi dictdagi barcha `qiymat`lar soni bo‘lsa, ularni yig‘indisini hisobla:
+
+```python
+scores = {"math": 90, "english": 85, "science": 92}
+```
+
+### 🎯 Task 20 (Muhim):
+
+Quyidagi dictda faqat qiymati `True` bo‘lgan kalitlarni chiqar:
+
+```python
+permissions = {"read": True, "write": False, "delete": True}
+# chiqishi: read, delete
+```
+
+---
+
+## 🧪 **10 ta aralash va chuqur dict amaliy mashq (function-based)**
+
+---
+
+### ✅ Task 21: Ismlar sonini sanash
+
+**Funksiya yarat**:
+
+```python
+def count_names(names: list[str]) -> dict[str, int]:
+```
+
+**Shart**: Berilgan `names` ro‘yxatidagi har bir ism necha marta uchraganini hisoblab, dict qaytar.
+✅ Natija: `{"Ali": 3, "Vali": 2, "Sami": 1}`
+
+---
+
+### ✅ Task 22: Talabalarni guruhlash
+
+**Funksiya yarat**:
+
+```python
+def group_students(students: list[dict[str, str]]) -> dict[str, list[str]]:
+```
+
+**Shart**: Har bir talaba ismini u tegishli bo‘lgan `group` bo‘yicha dict shaklida qaytar.
+✅ Natija: `{"A": ["Ali", "Soli"], "B": ["Vali", "Karim"]}`
+
+---
+
+### ✅ Task 23: Qiymatlar bo‘yicha indekslarni guruhlash
+
+**Funksiya yarat**:
+
+```python
+def group_indices(numbers: list[int]) -> dict[int, list[int]]:
+```
+
+**Shart**: Har bir noyob son uchun u ro‘yxatda qayerda turganini ko‘rsatuvchi dict qaytar.
+✅ Natija: `{1: [0, 2, 5], 2: [1, 4], ...}`
+
+---
+
+### ✅ Task 24: Eng ko‘p uchragan harfni topish
+
+**Funksiya yarat**:
+
+```python
+def most_common_char(text: str) -> str:
+```
+
+**Shart**: Berilgan matndagi eng ko‘p uchraydigan bitta harfni qaytar.
+
+---
+
+### ✅ Task 25: Yosh bo‘yicha guruhlash
+
+**Funksiya yarat**:
+
+```python
+def group_by_age(people: list[dict[str, int | str]]) -> dict[int, list[str]]:
+```
+
+**Shart**: Har bir odamni `age` bo‘yicha guruhlab, ismlarini list ko‘rinishida qaytar.
+
+---
+
+### ✅ Task 26: 2 ta dictni birlashtirish
+
+**Funksiya yarat**:
+
+```python
+def merge_dicts(a: dict, b: dict) -> dict:
+```
+
+**Shart**: Berilgan ikkita dictni birlashtir. Agar bir xil kalit bo‘lsa, `b` dagi qiymat ustun bo‘lsin.
+
+---
+
+### ✅ Task 27: Telefon daftari (Mini loyihacha)
+
+**Funksiya yarat**:
+
+```python
+def phonebook_menu(phonebook: dict[str, str]) -> None:
+```
+
+**Shart**:
+
+* 1: Kontakt qo‘shish (`ism → telefon`)
+* 2: Barcha kontaktlarni chiqarish
+* 3: Ism bo‘yicha telefon qidirish
+
+📌 `dict` bilan `menu` (input orqali) ishlash ko‘nikmasini beradi.
+
+---
+
+### ✅ Task 28: Satr uzunligi bo‘yicha guruhlash
+
+**Funksiya yarat**:
+
+```python
+def group_by_length(words: list[str]) -> dict[int, list[str]]:
+```
+
+**Shart**: Har bir so‘zni uzunligiga qarab dict ichiga guruhlab joylashtir.
+
+---
+
+### ✅ Task 29: Active foydalanuvchilarni chiqarish
+
+**Funksiya yarat**:
+
+```python
+def get_active_users(users: dict[str, dict[str, bool | str]]) -> list[str]:
+```
+
+**Shart**: Faqat `"active": True` bo‘lgan foydalanuvchilarning ismini ro‘yxat qilib qaytar.
+
+---
+
+### ✅ Task 30: Qiymati 0 bo‘lmagan elementlarni ajrat
+
+**Funksiya yarat**:
+
+```python
+def filter_non_zero(d: dict[str, int]) -> dict[str, int]:
+```
+
+**Shart**: Faqat qiymati 0 dan farq qiladigan kalit-qiymat juftliklarini yangi dict sifatida qaytar.
+
+---
+
+## 🎁 Bonus (Challenge)
+
+### ✅ Task 31: Harflar chastotasini hisoblash
+
+**Funksiya yarat**:
+
+```python
+def count_letters(text: str) -> dict[str, int]:
+```
+
+**Shart**: Berilgan matndagi harflarning necha marta uchrashini hisoblab, dict qaytar.
+✅ Masalan: `"assalomu alaykum"` → `{ 'a': 4, 's': 2, 'l': 2, ... }`
+
+---
